@@ -1,0 +1,12 @@
+{
+    "version": 4,
+    "configurations": [
+        {
+            "name": "SimpleNES",
+            "includePath": [
+                "${workspaceFolder}/include"
+            ],
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ]
+}

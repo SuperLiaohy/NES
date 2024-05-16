@@ -26,13 +26,14 @@ namespace sn
 
         void strobe(Byte b);
         Byte read();
-        void setKeyBindings(const std::vector<sf::Keyboard::Key>& keys);
+        void setKeyBindings(const std::vector<sf::Keyboard::Key> &keys);
+
     private:
         bool m_strobe;
         unsigned int m_keyStates;
 
         std::vector<sf::Keyboard::Key> m_keyBindings;
-//         sf::Keyboard::Key m_keyBindings[TotalButtons];
+        //         sf::Keyboard::Key m_keyBindings[TotalButtons];
     };
 }
 
