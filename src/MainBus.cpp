@@ -44,12 +44,7 @@ namespace sn
             LOG(InfoVerbose) << "Expansion ROM read attempted. This is currently unsupported" << std::endl;
         }
         else if (addr < 0x8000)
-        {
-            if (m_mapper->hasExtendedRAM())
-            {
-                return m_extRAM[addr - 0x6000];
-            }
-        }
+        {}
         else
         {
             return m_mapper->readPRG(addr);
@@ -91,12 +86,7 @@ namespace sn
             LOG(InfoVerbose) << "Expansion ROM access attempted. This is currently unsupported" << std::endl;
         }
         else if (addr < 0x8000)
-        {
-            if (m_mapper->hasExtendedRAM())
-            {
-                m_extRAM[addr - 0x6000] = value;
-            }
-        }
+        {}
         else
         {
             m_mapper->writePRG(addr, value);
@@ -119,12 +109,7 @@ namespace sn
             LOG(Error) << "Expansion ROM access attempted, which is unsupported" << std::endl;
         }
         else if (addr < 0x8000)
-        {
-            if (m_mapper->hasExtendedRAM())
-            {
-                return &m_extRAM[addr - 0x6000];
-            }
-        }
+        {}
         else
         {
             LOG(Error) << "Unexpected DMA request: " << std::hex << "0x" << +addr << " (" << +page << ")" << std::dec << std::endl;
@@ -141,9 +126,6 @@ namespace sn
             LOG(Error) << "Mapper pointer is nullptr" << std::endl;
             return false;
         }
-
-        if (mapper->hasExtendedRAM())
-            m_extRAM.resize(0x2000);
 
         return true;
     }

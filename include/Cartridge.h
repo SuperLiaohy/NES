@@ -11,21 +11,20 @@ namespace sn
 
     class Cartridge
     {
-        public:
-            Cartridge();
-            bool loadFromFile(std::string path);
-            const std::vector<Byte>& getROM();
-            const std::vector<Byte>& getVROM();
-            Byte getMapper();
-            Byte getNameTableMirroring();
-            bool hasExtendedRAM();
-        private:
-            std::vector<Byte> m_PRG_ROM;
-            std::vector<Byte> m_CHR_ROM;
-            Byte m_nameTableMirroring;
-            Byte m_mapperNumber;
-            bool m_extendedRAM;
-            bool m_chrRAM;
+    public:
+        Cartridge();
+        bool loadFromFile(std::string path);
+        const std::vector<Byte> &getROM();
+        const std::vector<Byte> &getVROM();
+        bool hasExtendedRAM();
+
+    private:
+        std::vector<Byte> m_PRG_ROM;
+        std::vector<Byte> m_CHR_ROM;
+        Byte m_nameTableMirroring;
+        Byte m_mapperNumber;
+        bool m_extendedRAM;
+        bool m_chrRAM;
     };
 
 };

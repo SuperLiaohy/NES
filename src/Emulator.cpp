@@ -45,7 +45,7 @@ namespace sn
         if (!m_cartridge.loadFromFile(rom_path))
             return;
 
-        m_mapper = Mapper::createMapper(static_cast<Mapper::Type>(m_cartridge.getMapper()),
+        m_mapper = Mapper::createMapper(static_cast<Mapper::Type>((Byte)1),
                                         m_cartridge,
                                         [&](){ m_cpu.interrupt(InterruptType::IRQ); },
                                         [&](){ m_pictureBus.updateMirroring(); });

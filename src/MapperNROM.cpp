@@ -9,6 +9,7 @@ namespace sn
         if (cart.getROM().size() == 0x4000) //1 bank
         {
             m_oneBank = true;
+            LOG(Info)<<"m_onebook";
         }
         else //2 banks
         {

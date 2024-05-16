@@ -1,6 +1,10 @@
 {
     "files.associations": {
         "cstdint": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "functional": "cpp",
+        "memory": "cpp",
+        "*.tcc": "cpp",
+        "algorithm": "cpp"
     }
 }
