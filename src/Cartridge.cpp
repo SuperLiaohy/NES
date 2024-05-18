@@ -5,6 +5,8 @@
 #include <fstream>
 #include <string>
 
+#include "rom.h"
+#include "smb.h"
 namespace sn
 {
     Cartridge::Cartridge() : m_nameTableMirroring(0),
@@ -30,7 +32,8 @@ namespace sn
 
     bool Cartridge::loadFromFile(std::string path)
     {
-        std::ifstream romFile(path, std::ios_base::binary | std::ios_base::in);
+//        std::ifstream romFile(path, std::ios_base::binary | std::ios_base::in);
+        ROM romFile(smb_nes);
         if (!romFile)//若romFile为0指针则说明没有打开
         {
             LOG(Error) << "Could not open ROM file from path: " << path << std::endl;

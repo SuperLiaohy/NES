@@ -45,7 +45,7 @@ function(define_file_basename_for_sources targetname)
 endfunction()
 
 # Specify include Directory
-include_directories("${PROJECT_SOURCE_DIR}/include")
+include_directories("${PROJECT_SOURCE_DIR}/include" "${PROJECT_SOURCE_DIR}/include/smb.h")
 
 # Set static if BUILD_STATIC is set
 if (BUILD_STATIC)
@@ -55,6 +55,7 @@ if (BUILD_STATIC)
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static-libstdc++ -static-libgcc")
     endif()
 endif()
+
 
 # Find SFML
 if (SFML_OS_WINDOWS AND SFML_COMPILER_MSVC)

@@ -1,13 +1,16 @@
-// #include "rom.h"
+ #include "rom.h"
 
-// extern unsigned char smb_nes[40976];
 
-// namespace LCH
-// {
-//     rom::rom():
-//         buffer_((unsigned char*)smb_nes),//指向数组的指针
-//         size_(smb_nes_len),//数组大小
-//         position_(0)//指针位置
-//     {}
 
-// }
+ bool ROM::read(char* path,long long size) {
+     for (int i = 0; i < size; ++i) {
+         path[i] = rom[pos];
+         ++pos;
+
+     }
+     return true;
+ }
+
+ ROM::operator bool() {
+     return rom != nullptr;
+ }
