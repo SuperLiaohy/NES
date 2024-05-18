@@ -95,11 +95,11 @@ int main(int argc, char** argv)
             std::cerr << "Unrecognized argument: " << argv[i] << std::endl;
     }
 
-    if (path.empty())
-    {
-        std::cout << "Argument required: ROM path" << std::endl;
-        return 1;
-    }
+//    if (path.empty())
+//    {
+//        std::cout << "Argument required: ROM path" << std::endl;
+//        return 1;
+//    }
 
     sn::parseControllerConf("keybindings.conf", p1, p2);
     emulator.setKeys(p1, p2);
